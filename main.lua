@@ -49,7 +49,7 @@ layout={
               layout_width="400";
               scaleType="centerCrop";
               layout_height="400";
-              background="icon2.png";
+              background="https://raw.githubusercontent.com/duchan94/HAITUNVNG/main/float_icon.png";
               id="image_logo_login";
               layout_gravity="center_horizontal";
             };
