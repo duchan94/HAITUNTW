@@ -19,7 +19,7 @@ os.execute("su")
 homeLY={
   LinearLayout;
   orientation="vertical";
-  background="res/images/bg.png";
+  background="https://raw.githubusercontent.com/duchan94/HAITUNVNG/main/bg.png";
   layout_height="fill";
   layout_width="fill";
   {
@@ -384,7 +384,7 @@ floatLY={
   layout_width="fill";
   {
     ImageView;
-    src="res/images/float_icon.png";
+    src="https://raw.githubusercontent.com/duchan94/HAITUNVNG/main/float_icon.png";
     id="btnHide";
     layout_height="6%h";
     layout_width="6%h";
@@ -807,11 +807,11 @@ CircleButton(map,0xA0FF0000,0xFF894AF1,10)
 function map.onClick()
   if map.checked then
     CircleButton(map,0x5600FF00,0xFF894AF1,10)
-    root("res/kill","@duchan94")
+    root("res/kill","load 50%")
     root("res/map_on","ON HACK MAP")
    else
     CircleButton(map,0xA0FF0000,0xFF894AF1,10)
-    root("res/kill","@duchan94")
+    root("res/kill","load 50%")
     root("res/map_off","OFF HACK MAP")
   end
 end
