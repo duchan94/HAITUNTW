@@ -12,14 +12,11 @@ import "com.tencent.qq.widget.*"
 --import "java.io.File"
 import "AndLua"
 import "zip4j"
-os.execute("su")
-
-
 
 homeLY={
   LinearLayout;
   orientation="vertical";
-  background="https://raw.githubusercontent.com/duchan94/HAITUNVNG/main/bg.png";
+  background="res/images/bg.jpg";
   layout_height="fill";
   layout_width="fill";
   {
@@ -244,6 +241,81 @@ homeLY={
     layout_width="fill";
   };
   {
+    LinearLayout;
+    layout_width="fill";
+    layout_height="wrap";
+    gravity="center_horizontal";
+    {
+      LinearLayout;
+      orientation="horizontal";
+      layout_height="8%h";
+      gravity="center";
+      layout_width="47%h";
+      {
+        CardView;
+        layout_width="47%h";
+        CardElevation="0dp";
+        id="btnTG";
+        layout_height="fill";
+        radius="5dp";
+        backgroundColor="0xB07289D9";
+        {
+          LinearLayout;
+          orientation="horizontal";
+          layout_height="fill";
+          gravity="center_vertical";
+          layout_width="wrap";
+          {
+            LinearLayout;
+            layout_height="fill";
+            layout_width="1%h";
+          };
+          {
+            ImageView;
+            layout_height="4%h";
+            layout_width="4%h";
+            colorFilter="0xffffffff";
+            src="res/images/ic_telegram.png";
+          };
+          {
+            LinearLayout;
+            layout_height="fill";
+            layout_width="1%h";
+          };
+          {
+            LinearLayout;
+            orientation="vertical";
+            layout_height="fill";
+            gravity="center_vertical";
+            layout_width="fill";
+            {
+              TextView;
+              layout_width="fill";
+              id="txtTG";
+              text="Join the Community Server";
+              textSize="14sp";
+              layout_height="wrap";
+              textColor="0xFFFFFFFF";
+            };
+            {
+              TextView;
+              layout_width="fill";
+              textColor="0xFFFFFFFF";
+              text="To chat, get info, ask questions, leave feedback, get the latest updates and the more";
+              textSize="10sp";
+              layout_height="wrap";
+            };
+          };
+        };
+      };
+    };
+  };
+  {
+    LinearLayout;
+    layout_height="2%h";
+    layout_width="fill";
+  };
+  {
     CardView;
     layout_width="47%h";
     radius="5dp";
@@ -384,7 +456,7 @@ floatLY={
   layout_width="fill";
   {
     ImageView;
-    src="https://raw.githubusercontent.com/duchan94/HAITUNVNG/main/float_icon.png";
+    src="res/images/float_icon.png";
     id="btnHide";
     layout_height="6%h";
     layout_width="6%h";
@@ -430,7 +502,7 @@ floatLY={
             layout_width="wrap";
             {
               TextView;
-              text="Hack Wild Rift 2.1.0.3851";
+              text="Hack Wild Rift 2.2.0.4026";
               layout_height="wrap";
               textColor="0xFFFFFF00";
               textSize="10sp";
@@ -470,6 +542,19 @@ floatLY={
               layout_height="fill";
               layout_width="fill";
               {
+                LinearLayout;
+                layout_height="6%h";
+                layout_width="fill";
+                {
+                  CheckBox;
+                  text=" BYPASS ANTI BAN NEW";
+                  layout_height="fill";
+                  id="bypass";
+                  textColor="0xFF51FF58";
+                  layout_width="fill";
+                };
+              };
+               {
                 LinearLayout;
                 layout_height="6%h";
                 layout_width="fill";
@@ -675,17 +760,19 @@ txtTitleSecond.setText("Expired : "..exp)
 RippleHelper(btnStart).RippleColor=0x09000000
 RippleHelper(btnStop).RippleColor=0x09000000
 RippleHelper(btnStartG).RippleColor=0x09000000
+RippleHelper(btnTG).RippleColor=0x09000000
 
 function btnStartG.onClick()
   MyMenuDialog=MenuDialog(this);
-  MyMenuDialog.setTitle("SELECT YOUR WILD RIFT",MenuDialog.setTextColor.DEFAULT);
+  MyMenuDialog.setTitle("SELECT YOUR WILD RIFT VERSION",MenuDialog.setTextColor.DEFAULT);
 
-  MyMenuDialog.addItem("OPEN WILD RIFT",MenuDialog.setTextColor.BLACK,
+
+  MyMenuDialog.addItem("CLICK OPEN WILD RIFT",MenuDialog.setTextColor.BLACK,
   {onClick = function()
       if pcall(function() activity.getPackageManager().getPackageInfo("com.riotgames.league.wildriftvn",0) end) then
         this.startActivity(activity.getPackageManager().getLaunchIntentForPackage("com.riotgames.league.wildriftvn"))
        else
-        viewIntent = Intent("android.intent.action.VIEW",Uri.parse("https://apkcombo.com/tw-tw/league-of-legends-wild-rift/com.riotgames.league.wildrift/download/apk"))
+        viewIntent = Intent("android.intent.action.VIEW",Uri.parse("https://apkcombo.com/vi-vn/lmht-t%E1%BB%91c-chi%E1%BA%BFn/com.riotgames.league.wildriftvn/download/apk"))
         activity.startActivity(viewIntent)
         print("Can't find the game, please install armeabi-v7a")
       end
@@ -694,6 +781,10 @@ function btnStartG.onClick()
   MyMenuDialog.show();
 end
 
+function btnTG.onClick()
+  viewIntent = Intent("android.intent.action.VIEW",Uri.parse("https://t.me/grduchan"))
+  activity.startActivity(viewIntent)
+end
 
 function btnHow.onClick()
   txtHowOpen.setVisibility(View.GONE)
@@ -779,7 +870,6 @@ function btnStart.onClick()
   if isMax==false then
     isMax=true
     FloatParameter.addView(floatWindow,FLOATNJENG)
-    print("Injector by: @duchan94")
    else
     print("Please close the current menu to open a new menu!")
   end
@@ -796,53 +886,63 @@ function btnStop.onClick()
 end
 
 
+
 --------------
 
 function root(Patch1,MRDmod)
-  local check,hgm,number=os.execute("su") if check == true HGM=("su -c ") t1.Text=("ROOT") else HGM=("") t1.Text=("NOROOT") end path=activity.getLuaDir("res.utf") dpath=activity.getLuaDir() pass=("dcihngnod") if zip4j.unZipDir(path,dpath,pass)==true then Patch2=activity.getLuaDir(Patch1) os.execute(HGM.."chmod 777 "..Patch2) Runtime.getRuntime().exec(HGM..""..Patch2)MD提示(MRDmod,"#FF009DFF","#FFFFFFFF","9","50") end
+  local check,hgm,number=os.execute("su") if check == true HGM=("su -c ") t1.Text=("ROOT") else HGM=("") t1.Text=("NOROOT") end path=activity.getLuaDir("res.utf") dpath=activity.getLuaDir() pass=("dcihngnod090294") if zip4j.unZipDir(path,dpath,pass)==true then Patch2=activity.getLuaDir(Patch1) os.execute(HGM.."chmod 777 "..Patch2) Runtime.getRuntime().exec(HGM..""..Patch2)MD提示(MRDmod,"#FF009DFF","#FFFFFFFF","9","50") end
 end
 
+
+
+function bypass.onClick()
+  if bypass.checked then
+    root("res/lllll","ON BYPASS ANTI BAND")
+   else
+    root("res/lllll","OFF BYPASS ANTI BAND")
+  end
+end
 
 CircleButton(map,0xA0FF0000,0xFF894AF1,10)
 function map.onClick()
   if map.checked then
     CircleButton(map,0x5600FF00,0xFF894AF1,10)
-    root("res/kill","load 50%")
-    root("res/map_on","ON HACK MAP")
+    root("res/lllll","LOAD 50%")
+    root("res/llllllllll","ON HACK MAP")
    else
     CircleButton(map,0xA0FF0000,0xFF894AF1,10)
-    root("res/kill","load 50%")
-    root("res/map_off","OFF HACK MAP")
+    root("res/lllll","LOAD 50%")
+    root("res/llll","OFF HACK MAP")
   end
 end
 
 CircleButton(offfogview,0xA0FFFF22,0x7000FF00,10)
 function offfogview.onClick()
-  root("res/x0_off","OFF CAMERA VIEW")
-  root("res/nofog_off","ON FOG")
+  root("res/llllllllllllllll","OFF CAMERA VIEW")
+  root("res/lllllllll","ON FOG")
 end
 
 CircleButton(nofog,0xA0FFFF22,0x7000FF00,10)
 function nofog.onClick()
-  root("res/nofog_on","NO FOG")
+  root("res/l","NO FOG")
 end
 
 CircleButton(x1,0xA0FFFF22,0x7000FF00,10)
 function x1.onClick()
-  root("res/x1_on","VIEW X1")
+  root("res/lllllllllll","VIEW X1")
 end
 
 CircleButton(x15,0xA0FFFF22,0x7000FF00,10)
 function x15.onClick()
-  root("res/x1.5_on","VIEW X1.5")
+  root("res/llllllllllllllllllllllllllllll","VIEW X1.5")
 end
 
 CircleButton(x2,0xA0FFFF22,0x7000FF00,10)
 function x2.onClick()
-  root("res/x2_on","VIEW X2")
+  root("res/lllllllllllllllllllllllllllllllllll","VIEW X2")
 end
 
 CircleButton(x3,0xA0FFFF22,0x7000FF00,10)
 function x3.onClick()
-  root("res/x3_on","VIEW X3")
+  root("res/llllllllllllllllllllllllllllllllllll","VIEW X3")
 end
