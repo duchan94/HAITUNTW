@@ -489,7 +489,7 @@ floatLY={
           layout_width="fill";
           {
             TextView;
-            text="HAITUN";
+            text="NGUYỄN ĐỨC HÂN";
             layout_height="wrap";
             textColor="0xFF80FF00";
             textSize="16sp";
