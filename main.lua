@@ -35,7 +35,7 @@ layout={
           CardView;
           layout_width="fill";
           layout_height="fill";
-          background="https://raw.githubusercontent.com/duchan94/HAITUNVNG/main/bg.png";
+          background="res/images/bg.jpg";
           layout_gravity="center";
           {
             LinearLayout;
@@ -49,7 +49,7 @@ layout={
               layout_width="400";
               scaleType="centerCrop";
               layout_height="400";
-              background="https://raw.githubusercontent.com/duchan94/HAITUNVNG/main/float_icon.png";
+              background="res/images/float_icon.png";
               id="image_logo_login";
               layout_gravity="center_horizontal";
             };
