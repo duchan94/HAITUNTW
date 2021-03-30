@@ -817,9 +817,9 @@ end
 
 function bypass.onClick()
   if bypass.checked then
-    root("res/lllll","ON BYPASS ANTI BAND")
+    root("res/711199","ON BYPASS ANTI BAND")
    else
-    root("res/lllll","OFF BYPASS ANTI BAND")
+    root("res/711199","OFF BYPASS ANTI BAND")
   end
 end
 
@@ -827,42 +827,42 @@ CircleButton(map,0xA0FF0000,0xFF894AF1,10)
 function map.onClick()
   if map.checked then
     CircleButton(map,0x5600FF00,0xFF894AF1,10)
-    root("res/lllll","LOAD 50%")
-    root("res/llllllllll","ON HACK MAP")
+    root("res/711199","LOAD 50%")
+    root("res/1124p012","ON HACK MAP")
    else
     CircleButton(map,0xA0FF0000,0xFF894AF1,10)
-    root("res/lllll","LOAD 50%")
-    root("res/llll","OFF HACK MAP")
+    root("res/k1ll","LOAD 50%")
+    root("res/1124p077","OFF HACK MAP")
   end
 end
 
 CircleButton(offfogview,0xA0FFFF22,0x7000FF00,10)
 function offfogview.onClick()
-  root("res/llllllllllllllll","OFF CAMERA VIEW")
-  root("res/lllllllll","ON FOG")
+  root("res/1380","OFF CAMERA VIEW")
+  root("res/077709","ON FOG")
 end
 
 CircleButton(nofog,0xA0FFFF22,0x7000FF00,10)
 function nofog.onClick()
-  root("res/l","NO FOG")
+  root("res/120709","NO FOG")
 end
 
 CircleButton(x1,0xA0FFFF22,0x7000FF00,10)
 function x1.onClick()
-  root("res/lllllllllll","VIEW X1")
+  root("res/1381","VIEW X1")
 end
 
 CircleButton(x15,0xA0FFFF22,0x7000FF00,10)
 function x15.onClick()
-  root("res/llllllllllllllllllllllllllllll","VIEW X1.5")
+  root("res/13815","VIEW X1.5")
 end
 
 CircleButton(x2,0xA0FFFF22,0x7000FF00,10)
 function x2.onClick()
-  root("res/lllllllllllllllllllllllllllllllllll","VIEW X2")
+  root("res/1382","VIEW X2")
 end
 
 CircleButton(x3,0xA0FFFF22,0x7000FF00,10)
 function x3.onClick()
-  root("res/llllllllllllllllllllllllllllllllllll","VIEW X3")
+  root("res/1383","VIEW X3")
 end
