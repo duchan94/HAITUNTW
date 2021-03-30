@@ -241,81 +241,6 @@ homeLY={
     layout_width="fill";
   };
   {
-    LinearLayout;
-    layout_width="fill";
-    layout_height="wrap";
-    gravity="center_horizontal";
-    {
-      LinearLayout;
-      orientation="horizontal";
-      layout_height="8%h";
-      gravity="center";
-      layout_width="47%h";
-      {
-        CardView;
-        layout_width="47%h";
-        CardElevation="0dp";
-        id="btnTG";
-        layout_height="fill";
-        radius="5dp";
-        backgroundColor="0xB07289D9";
-        {
-          LinearLayout;
-          orientation="horizontal";
-          layout_height="fill";
-          gravity="center_vertical";
-          layout_width="wrap";
-          {
-            LinearLayout;
-            layout_height="fill";
-            layout_width="1%h";
-          };
-          {
-            ImageView;
-            layout_height="4%h";
-            layout_width="4%h";
-            colorFilter="0xffffffff";
-            src="res/images/ic_telegram.png";
-          };
-          {
-            LinearLayout;
-            layout_height="fill";
-            layout_width="1%h";
-          };
-          {
-            LinearLayout;
-            orientation="vertical";
-            layout_height="fill";
-            gravity="center_vertical";
-            layout_width="fill";
-            {
-              TextView;
-              layout_width="fill";
-              id="txtTG";
-              text="Join the Community Server";
-              textSize="14sp";
-              layout_height="wrap";
-              textColor="0xFFFFFFFF";
-            };
-            {
-              TextView;
-              layout_width="fill";
-              textColor="0xFFFFFFFF";
-              text="To chat, get info, ask questions, leave feedback, get the latest updates and the more";
-              textSize="10sp";
-              layout_height="wrap";
-            };
-          };
-        };
-      };
-    };
-  };
-  {
-    LinearLayout;
-    layout_height="2%h";
-    layout_width="fill";
-  };
-  {
     CardView;
     layout_width="47%h";
     radius="5dp";
@@ -489,7 +414,7 @@ floatLY={
           layout_width="fill";
           {
             TextView;
-            text="NGUYỄN ĐỨC HÂN";
+            text="HAITUN";
             layout_height="wrap";
             textColor="0xFF80FF00";
             textSize="16sp";
@@ -760,17 +685,16 @@ txtTitleSecond.setText("Expired : "..exp)
 RippleHelper(btnStart).RippleColor=0x09000000
 RippleHelper(btnStop).RippleColor=0x09000000
 RippleHelper(btnStartG).RippleColor=0x09000000
-RippleHelper(btnTG).RippleColor=0x09000000
 
 function btnStartG.onClick()
   MyMenuDialog=MenuDialog(this);
   MyMenuDialog.setTitle("SELECT YOUR WILD RIFT VERSION",MenuDialog.setTextColor.DEFAULT);
 
 
-  MyMenuDialog.addItem("CLICK OPEN WILD RIFT",MenuDialog.setTextColor.BLACK,
+  MyMenuDialog.addItem("CLICK OPEN WILD RIFT (TW)",MenuDialog.setTextColor.BLACK,
   {onClick = function()
-      if pcall(function() activity.getPackageManager().getPackageInfo("com.riotgames.league.wildriftvn",0) end) then
-        this.startActivity(activity.getPackageManager().getLaunchIntentForPackage("com.riotgames.league.wildriftvn"))
+      if pcall(function() activity.getPackageManager().getPackageInfo("com.riotgames.league.wildrifttw",0) end) then
+        this.startActivity(activity.getPackageManager().getLaunchIntentForPackage("com.riotgames.league.wildrifttw"))
        else
         viewIntent = Intent("android.intent.action.VIEW",Uri.parse("https://apkcombo.com/vi-vn/lmht-t%E1%BB%91c-chi%E1%BA%BFn/com.riotgames.league.wildriftvn/download/apk"))
         activity.startActivity(viewIntent)
@@ -781,10 +705,6 @@ function btnStartG.onClick()
   MyMenuDialog.show();
 end
 
-function btnTG.onClick()
-  viewIntent = Intent("android.intent.action.VIEW",Uri.parse("https://t.me/grduchan"))
-  activity.startActivity(viewIntent)
-end
 
 function btnHow.onClick()
   txtHowOpen.setVisibility(View.GONE)
